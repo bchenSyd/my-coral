@@ -1,7 +1,12 @@
-import React, { Component } from 'react';
+import React, { createElement, Component } from 'react';
 import { connect } from 'react-redux';
-import { compose, branch } from 'recompose';
-import { loadPageConfig } from './redux/pageConfig';
+import {
+    Switch,
+    Route,
+} from 'react-router-dom';
+import { loadPageConfig, pageSelector } from './redux/pageConfig';
+import { pageMap } from './pages';
+
 
 class Bootstrap extends Component {
     componentDidMount() {
@@ -10,19 +15,30 @@ class Bootstrap extends Component {
     }
 
     render() {
-        const { isLoading } = this.props;
+        const { location, isLoading, pages: { homePage, allPages } } = this.props;
         return <div>
-            {isLoading ?
+            {isLoading || !homePage ?
                 <div> loading...</div>
-                : <h1>coral home</h1>
+                : <Switch location={location}>
+                    {
+                        allPages.map(p => {
+                            return <Route exact={p.path === '/'} key={`_path_key_${p.path}`} path={p.path} render={
+                                props => {
+                                    return createElement(pageMap.get(p.name), props)
+                                }
+                            } />
+                        })
+                    }
+                </Switch>
             }
         </div>
     }
 };
 
 export default connect(
-    ({ pageConfig }) => ({
-        isLoading: pageConfig.loading
+    state => ({
+        isLoading: state.pageConfig.loading,
+        pages: pageSelector(state)
     }),
     {
         loadPageConfig
