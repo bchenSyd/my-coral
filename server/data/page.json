@@ -2,6 +2,7 @@
     "pages": [
         {
             "name": "coral.home",
+            "path":"/",
             "id": "e5fa44f2b31c1fb553b6021e7360d07d5d91ff5e",
             "tileGroups": [
                 "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e"
@@ -9,12 +10,28 @@
         },
         {
             "name": "coral.search",
+            "path":"/search",
             "id": "7448d8798a4380162d4b56f9b452e2f6f9e24e7a"
+        },
+        {
+            "name": "coral.customer-profile",
+            "path":"/customerProfile/:customerId",
+            "id": "f9dbdb59857a5de65d1b81ccdb3ddee6823bbff9",
+            "tileGroups": [
+                "389cc6b7ae5a659383eab5dfc253764eccf84732"
+            ]
         }
     ],
     "tileGroups": [
         {
             "id": "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e",
+            "tiles": [
+                "today",
+                "todos"
+            ]
+        },
+        {
+            "id": "389cc6b7ae5a659383eab5dfc253764eccf84732",
             "tiles": [
                 "today",
                 "todos"

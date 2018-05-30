@@ -9,14 +9,20 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-server":"node server/index.js",
+    "start-server": "node server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "express": "^4.16.3",
-    "recompose": "^0.27.1"
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "recompose": "^0.27.1",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-thunk": "^2.3.0",
+    "whatwg-fetch": "^2.0.4"
   },
-  "proxy":"http://localhost:8080"
+  "proxy": "http://localhost:8080"
 }
