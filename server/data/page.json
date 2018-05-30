@@ -1,0 +1,34 @@
+{
+    "pages": [
+        {
+            "name": "coral.home",
+            "id": "e5fa44f2b31c1fb553b6021e7360d07d5d91ff5e",
+            "tileGroups": [
+                "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e"
+            ]
+        },
+        {
+            "name": "coral.search",
+            "id": "7448d8798a4380162d4b56f9b452e2f6f9e24e7a"
+        }
+    ],
+    "tileGroups": [
+        {
+            "id": "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e",
+            "tiles": [
+                "today",
+                "todos"
+            ]
+        }
+    ],
+    "tiles": [
+        {
+            "name": "today",
+            "label": "my today"
+        },
+        {
+            "name": "todos",
+            "label": "my taks"
+        }
+    ]
+}

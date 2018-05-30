@@ -1,0 +1,22 @@
+{
+  "name": "coral",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-server":"node server/index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "express": "^4.16.3",
+    "recompose": "^0.27.1"
+  },
+  "proxy":"http://localhost:8080"
+}
