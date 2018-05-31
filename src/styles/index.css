@@ -44,7 +44,7 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .Home .title div h2 {
+  .Home .title h2 {
     display: inline-block;
     margin-right: 20px; }
 
@@ -75,7 +75,7 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .Search .title div h2 {
+  .Search .title h2 {
     display: inline-block;
     margin-right: 20px; }
 
