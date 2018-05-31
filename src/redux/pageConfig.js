@@ -44,6 +44,10 @@ export const pageSelector = createSelector(
     }
 )
 
-export const pageDetailsSelector = (state, pageName) =>{
-    return pageSelector(state).allPages.find(p=>p.name === pageName);
-}
+export const tileGroupsSelector = pageName =>createSelector(
+    entitySelector,
+    ({pages, tileGroups} )=>{
+        const page = pages.find(p=>p.name === pageName);
+        return page.tileGroups.map(tg=> tileGroups.find(t=>t.id === tg));
+    }
+)

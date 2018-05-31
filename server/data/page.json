@@ -27,14 +27,15 @@
             "id": "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e",
             "tiles": [
                 "today",
-                "todos"
+                "todo",
+                "today"
             ]
         },
         {
             "id": "389cc6b7ae5a659383eab5dfc253764eccf84732",
             "tiles": [
                 "today",
-                "todos"
+                "todo"
             ]
         }
     ],
