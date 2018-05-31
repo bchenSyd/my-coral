@@ -2,7 +2,7 @@
 
 .content{
     width: 100%;
-    padding: 10px 100px;
+    padding: 10px 0;
     .tileGroup{
         width: 100%;
         padding: 5px;
@@ -14,9 +14,9 @@
 
 .tile{
     border: 1px solid gray;
-    min-width: percentage(1/1) - 4% ;
+    width: percentage(1/1) - 2% ;
     padding: 2%;
-    margin:20px;
+    margin:1%;
     >div:not(:first-child) {
         margin-top: 10px;
     }
@@ -24,6 +24,6 @@
 
 @media (min-width: 800px){
     .tile{
-        min-width: percentage(1/2) - 4%;
+        width: percentage(1/2) - 3%;
     }
 }

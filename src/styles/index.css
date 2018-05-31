@@ -50,7 +50,7 @@ button {
 
 .Home .content {
   width: 100%;
-  padding: 10px 100px; }
+  padding: 10px 0; }
   .Home .content .tileGroup {
     width: 100%;
     padding: 5px;
@@ -60,15 +60,15 @@ button {
 
 .Home .tile {
   border: 1px solid gray;
-  min-width: 96%;
+  width: 98%;
   padding: 2%;
-  margin: 20px; }
+  margin: 1%; }
   .Home .tile > div:not(:first-child) {
     margin-top: 10px; }
 
 @media (min-width: 800px) {
   .Home .tile {
-    min-width: 46%; } }
+    width: 47%; } }
 
 .Search .title {
   display: flex;
