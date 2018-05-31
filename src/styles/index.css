@@ -1,0 +1,40 @@
+html {
+  height: 100%; }
+  html body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%; }
+    html body #root {
+      height: 100%; }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header-footer {
+  flex: none;
+  justify-content: center;
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center; }
+
+.App-content {
+  flex: 1;
+  padding: 20px 40px;
+  font-size: large; }
+
+.App-title {
+  font-size: 1.5em; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }

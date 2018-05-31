@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 
-const API_HOST = 'http://localhost:8082';
+//const API_HOST = 'http://localhost:8082';
 
 export default function callApi(endpoint, method = 'get', body = null) {
     //const fullUrl = (endpoint.indexOf(API_HOST) === -1) ? API_HOST + endpoint : endpoint;

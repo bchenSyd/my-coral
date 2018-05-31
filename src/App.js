@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Bootstrap from './bootstrap';
 
 const App = ({location}) => (
