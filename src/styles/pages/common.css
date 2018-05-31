@@ -1,0 +1,8 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .title h2 {
+    display: inline-block;
+    margin-right: 20px; }
