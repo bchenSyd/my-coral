@@ -48,7 +48,7 @@ class Tasks extends Component {
   render() {
     const { loading, tasks, timeStamp } = this.state;
     return loading
-      ? <div>"loading tasks"</div>
+      ? <div>loading tasks...</div>
       : this.renderAppointments(tasks, timeStamp)
   }
 }

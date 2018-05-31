@@ -48,7 +48,7 @@ class Appointments extends Component {
   render() {
     const { loading, appointments, timeStamp } = this.state;
     return loading
-      ? <div>"loading appointments"</div>
+      ? <div>loading appointments...</div>
       : this.renderAppointments(appointments, timeStamp)
   }
 }
