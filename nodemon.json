@@ -1,0 +1,11 @@
+{
+    "verbose": true,
+    "watch": [
+        "server"
+    ],
+    "ignore": [""],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "js json"
+}

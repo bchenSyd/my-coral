@@ -1,6 +1,8 @@
-import { combineReducers } from 'redux';
-import pageConfigReducer from '../pageConfig';
+import { combineReducers } from "redux";
+import pageConfigReducer from "../pageConfig";
+import refreshReducer from "../refresh";
 
 export default combineReducers({
-    pageConfig: pageConfigReducer
+  pageConfig: pageConfigReducer,
+  refresh: refreshReducer
 });
