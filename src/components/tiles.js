@@ -3,17 +3,18 @@ import { containerMap } from "../containers";
 
 import Appointments from "../containers/appointments";
 
-export const TileGroup = ({ tileGroup }) => (
+export const TileGroup = ({ tileGroup, index }) => (
   <div>
-    {tileGroup.tiles.map((tileName, index) => (
-      <Tile key={`_index_${index}`} tileName={tileName} />
-    ))}
+    <h3> tile group {index + 1}</h3>
+    <div className='tileGroup'>
+      {tileGroup.tiles.map((tileName, index) => (
+        <Tile key={`_index_${index}`} tileName={tileName} />
+      ))}
+    </div>
   </div>
 );
 
 export const Tile = ({ tileName }) => {
-  console.log(containerMap, '--', tileName);
   const container = createElement(containerMap.get(tileName));
-  console.log(container);
-  return <div>{container}</div>;
+  return <div className='tile'>{container}</div>;
 };

@@ -11,4 +11,12 @@ html {
   }
 }
 
+* {
+box-sizing: border-box;
+}
+
+button {
+  height: 30px; 
+}
+
 @import './App.scss'

@@ -19,7 +19,7 @@ class Appointments extends Component {
         appointments,
         timeStamp
       });
-      if(cb){
+      if (cb) {
         cb();
       }
     });
@@ -33,38 +33,23 @@ class Appointments extends Component {
     const { refreshRequired: wasRefreshRequired } = this.props;
     const { refreshRequired, refreshPage } = nextProps;
     if (refreshRequired && !wasRefreshRequired) {
-      this.loadAppointments(() => { refreshPage(false )});
+      this.loadAppointments(() => { refreshPage(false) });
     }
   }
 
-  renderAppointments = (appotinments, timeStamp) => (
-    <div>
-      {appotinments.map((p, index) => (
-        <div key={`_apmt_${index}`} style={{ margin: "10px" }}>
-          {p}
-        </div>
-      ))}
-      <div style={{ marginTop: "60px" }}>lastUpdated: {timeStamp}</div>
-    </div>
-  );
+  renderAppointments = (_appointments, timeStamp) => {
+    const appointments = _appointments.map((p, index) => (
+      <div key={`_apmt_${index}`}>{p}</div>
+    ));
+    appointments.push(<div key='timestamp'>lastUpdated: {timeStamp}</div>);
+    return appointments;
+  }
 
   render() {
     const { loading, appointments, timeStamp } = this.state;
-    return (
-      <div
-        style={{
-          width: "500px",
-          height: "300px",
-          border: "1px solid red",
-          margin: "20px",
-          float: "left"
-        }}
-      >
-        {loading
-          ? "loading appointments"
-          : this.renderAppointments(appointments, timeStamp)}
-      </div>
-    );
+    return loading
+      ? <div>"loading appointments"</div>
+      : this.renderAppointments(appointments, timeStamp)
   }
 }
 

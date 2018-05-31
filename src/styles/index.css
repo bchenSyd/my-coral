@@ -8,6 +8,12 @@ html {
     html body #root {
       height: 100%; }
 
+* {
+  box-sizing: border-box; }
+
+button {
+  height: 30px; }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -32,6 +38,46 @@ html {
 
 .App-title {
   font-size: 1.5em; }
+
+.Home .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .Home .title div h2 {
+    display: inline-block;
+    margin-right: 20px; }
+
+.Home .content {
+  width: 100%;
+  padding: 10px 100px; }
+  .Home .content .tileGroup {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+
+.Home .tile {
+  border: 1px solid gray;
+  min-width: 96%;
+  padding: 2%;
+  margin: 20px; }
+  .Home .tile > div:not(:first-child) {
+    margin-top: 10px; }
+
+@media (min-width: 800px) {
+  .Home .tile {
+    min-width: 46%; } }
+
+.Search .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .Search .title div h2 {
+    display: inline-block;
+    margin-right: 20px; }
 
 @keyframes App-logo-spin {
   from {

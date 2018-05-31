@@ -29,6 +29,14 @@
   font-size: 1.5em;
 }
 
+.Home{
+  @import './pages/home.scss';
+}
+
+.Search{
+  @import './pages/search.scss';
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
