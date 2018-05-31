@@ -1,13 +1,13 @@
 import { createAction, handleAction } from "redux-actions";
+import { createSelector } from "reselect";
 
-export const refreshPage = createAction("REFRESH");
-
+export const refreshPage = createAction("REFRESH_PAGE");
 const reducer = handleAction(
   refreshPage,
-  state => {
-    return { ...state, required: true };
+  (state, { payload }) => {
+    return { ...state, required: payload };
   },
-  { refresh: false }
+  { required: false }
 );
 
 export default reducer;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { refreshPage } from "../redux/refresh";
 import fetch from "../common/fetch";
 
 class Appointments extends Component {
@@ -7,7 +8,7 @@ class Appointments extends Component {
     loading: false,
     appointments: {}
   };
-  loadAppointments() {
+  loadAppointments(cb) {
     this.setState({
       loading: true
     });
@@ -18,6 +19,9 @@ class Appointments extends Component {
         appointments,
         timeStamp
       });
+      if(cb){
+        cb();
+      }
     });
   }
 
@@ -26,17 +30,18 @@ class Appointments extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { needRefresh } = this.props;
-    const { needRefresh: needRefreshNext } = nextProps;
-    if (needRefreshNext && !needRefresh) {
+    const { refreshRequired: wasRefreshRequired } = this.props;
+    const { refreshRequired, refreshPage } = nextProps;
+    if (refreshRequired && !wasRefreshRequired) {
+      this.loadAppointments(() => { refreshPage(false )});
     }
   }
 
   renderAppointments = (appotinments, timeStamp) => (
     <div>
-      {appotinments.map((t, index) => (
+      {appotinments.map((p, index) => (
         <div key={`_apmt_${index}`} style={{ margin: "10px" }}>
-          {t}
+          {p}
         </div>
       ))}
       <div style={{ marginTop: "60px" }}>lastUpdated: {timeStamp}</div>
@@ -57,11 +62,17 @@ class Appointments extends Component {
       >
         {loading
           ? "loading appointments"
-          : this.renderAppointments(appointments, timeStamp)
-          }
+          : this.renderAppointments(appointments, timeStamp)}
       </div>
     );
   }
 }
 
-export default Appointments;
+export default connect(
+  state => ({
+    refreshRequired: state.refresh.required
+  }),
+  {
+    refreshPage
+  }
+)(Appointments);
