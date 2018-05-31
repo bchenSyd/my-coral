@@ -43,3 +43,7 @@ export const pageSelector = createSelector(
         }
     }
 )
+
+export const pageDetailsSelector = (state, pageName) =>{
+    return pageSelector(state).allPages.find(p=>p.name === pageName);
+}

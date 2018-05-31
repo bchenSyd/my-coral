@@ -1,15 +1,17 @@
 import HomePage from './Home';
 import SearchPage from './Search';
 import CustomerProfilePage from './CustomerProfile';
+import pages from './constants';
 
+export const pageMap = new Map([
+    [pages.HOME, HomePage],
+    [pages.SEARCH, SearchPage],
+    [pages.PROFILE, CustomerProfilePage]
+  ]);
+  
 export {
     HomePage,
     SearchPage,
-    CustomerProfilePage
+    CustomerProfilePage,
+    pages,
 }
-
-export const pageMap = new Map([
-    ['coral.home', HomePage],
-    ['coral.search', SearchPage],
-    ['coral.customer-profile', CustomerProfilePage]
-]);
