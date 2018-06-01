@@ -1,3 +1,4 @@
+import './ie-polyfills'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
@@ -9,6 +10,8 @@ import configureStore from './redux/store/configureStore';
 import './styles/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+
+
 
 
 const store = configureStore();
