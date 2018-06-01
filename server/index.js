@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
   );
   next();
 });
-
+app.use(express.static('./build'));
 var router = express.Router();
 router.get("/pageConfig", function(req, res) {
   setTimeout(() => {
