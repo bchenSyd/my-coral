@@ -34,7 +34,10 @@ router.get("/tasks", function(req, res) {
     });
   }, 800);
 });
-app.use("/", router);
+
+// 1. historyapifallback is already built-in in express
+// 2. there could be a collision of client route and server route; so it's better to prefix all server route with api;
+app.use("/api", router);
 
 const port = process.env.PORT || 8082;
 app.listen(port, "0.0.0.0");

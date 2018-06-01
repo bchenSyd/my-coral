@@ -11,7 +11,7 @@ import { pageMap } from './pages';
 class Bootstrap extends Component {
     componentDidMount() {
         const { loadPageConfig } = this.props;
-        loadPageConfig('/pageconfig');
+        loadPageConfig('/api/pageconfig');
     }
 
     render() {

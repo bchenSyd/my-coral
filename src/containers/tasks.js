@@ -12,7 +12,7 @@ class Tasks extends Component {
     this.setState({
       loading: true
     });
-    fetch("/tasks").then(result => {
+    fetch("/api/tasks").then(result => {
       const { tasks, timeStamp } = result;
       this.setState({
         loading: false,

@@ -12,7 +12,7 @@ class Appointments extends Component {
     this.setState({
       loading: true
     });
-    fetch("/appointments").then(result => {
+    fetch("/api/appointments").then(result => {
       const { appointments, timeStamp } = result;
       this.setState({
         loading: false,
