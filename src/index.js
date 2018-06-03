@@ -1,4 +1,4 @@
-import './ie-polyfills'
+import './ie-polyfills'; // must be at the top, before import 'react'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
