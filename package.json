@@ -19,8 +19,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "start-heroku": "node server/index.js",
-    "heroku-prebuild": "npm run build",
-    "heroku-postbuild": "echo ************ this is run after build *******"
+    "heroku-prebuild": "echo ************ this is run before npm install *******",
+    "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
     "core-js": "^2.5.7",
