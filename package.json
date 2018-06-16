@@ -1,6 +1,9 @@
 {
   "name": "coral",
   "version": "0.1.0",
+  "engines": {
+    "npm": "^6.0.0"
+  },
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "^1.3.0",
