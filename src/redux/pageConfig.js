@@ -3,10 +3,11 @@ import { createActions, handleActions } from "redux-actions";
 import { createSelector } from "reselect";
 
 const {
-  loadpageconfigStart: startLoading,
+  loadpageconfigStart /*#name: this must match with #key*/: startLoading,
   loadpageconfigComplete: completeLoading
 } = createActions({
-  LOADPAGECONFIG_START: undefined,
+  LOADPAGECONFIG_START /*#key: catch!! this must match with #name   */: undefined,
+
   LOADPAGECONFIG_COMPLETE: undefined // if null or undefined, use identity function by defualt;
 });
 
