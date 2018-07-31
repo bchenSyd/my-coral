@@ -19,11 +19,10 @@
 .App-header-footer {
   flex: none;
   /* 2 */
-  justify-content: center;
+  text-align: center;
   background-color: #222;
   padding: 20px;
-  color: white;
-  text-align: center; }
+  color: white; }
 
 .App-content {
   flex: 1 0 auto;

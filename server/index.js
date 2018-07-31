@@ -11,11 +11,11 @@ app.use(function(req, res, next) {
   );
   next();
 });
-app.use(express.static('./build'));
+app.use(express.static("./build"));
 var router = express.Router();
 router.get("/pageConfig", function(req, res) {
   setTimeout(() => {
-      res.json(pageConfig);
+    res.json(pageConfig);
   }, 500);
 });
 router.get("/appointments", function(req, res) {
@@ -39,6 +39,6 @@ router.get("/tasks", function(req, res) {
 // 2. there could be a collision of client route and server route; so it's better to prefix all server route with api;
 app.use("/api", router);
 
-const port = process.env.PORT || 8082;
+const port = process.env.PORT || 8002;
 app.listen(port, "0.0.0.0");
 console.log("sever is listening on http://localhost:" + port);
