@@ -3,14 +3,18 @@ const pageConfig = require("./data/page");
 
 const app = express();
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {  // same as require('cors'); app.use( cors({ options:'*' })) ;
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, Authorization, X-Requested-With, Content-Type, Accept"
   );
+  if (req.method === "OPTIONS") {
+    return res.end();
+  }
   next();
 });
+
 app.use(express.static("./build"));
 var router = express.Router();
 router.get("/pageConfig", function(req, res) {
