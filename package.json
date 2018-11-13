@@ -15,6 +15,7 @@
     "start": "npm-run-all -p watch-css start-js start-server",
     "start-server": "nodemon server/index.js",
     "start-js": "PORT=8001 react-scripts start ",
+    "debug-js": "PORT=8001 react-scripts --inspect-brk start",
     "watch-css": "npm run build-css && node-sass-chokidar src/styles -o src/styles --watch --recursive",
     "build": "npm-run-all build-css build-js",
     "build-js": "GENERATE_SOURCEMAP=false react-scripts build",
