@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import Bootstrap from "./bootstrap";
+import Routes from "./routes";
 
 const App = ({ location }) => (
   <div className="App">
@@ -9,7 +9,9 @@ const App = ({ location }) => (
       <h1 className="App-title">Welcome to React</h1>
     </header>
     <div className="App-content">
-      <Bootstrap location={location} />
+      <div className="content">
+        <Routes location={location} />
+      </div>
     </div>
     <footer className="App-header-footer">
       <div>copy-rght: bochen2014@yahoo.com</div>

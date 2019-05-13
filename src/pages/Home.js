@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { tileGroupsSelector } from "../redux/pageConfig";
+import { cardGroupsSelector as cardGroupsSelector } from "../redux/pageConfig";
 import { refreshPage as refreshPageAction } from "../redux/refresh";
-import { TileGroup } from "../components/tiles";
+import { CardGroup } from "../components/cards";
 import pages from "./constants";
 
-const Home = ({ refreshPage, history, tileGroups }) => {
+const Home = ({ refreshPage, history, cardGroups }) => {
   const onSearch = () => {
     history.push("/search");
   };
@@ -19,8 +19,8 @@ const Home = ({ refreshPage, history, tileGroups }) => {
         <button onClick={() => refreshPage(true)}>refresh</button>
       </div>
       <div className="content">
-        {tileGroups.map((tg, index) => (
-          <TileGroup key={`_index_${index}`} tileGroup={tg} index={index} />
+        {cardGroups.map((cg, index) => (
+          <CardGroup key={`_index_${index}`} cardGroup={cg} index={index} />
         ))}
       </div>
     </div>
@@ -29,7 +29,7 @@ const Home = ({ refreshPage, history, tileGroups }) => {
 
 export default connect(
   state => ({
-    tileGroups: tileGroupsSelector(pages.HOME)(state)
+    cardGroups: cardGroupsSelector(pages.HOME)(state)
   }),
   {
     refreshPage: refreshPageAction

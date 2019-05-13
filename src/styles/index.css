@@ -43,8 +43,14 @@ button {
 .App-content {
   flex: 1 0 auto;
   /* 2 */
-  padding: 20px 40px;
+  background-color: #f4f3f0;
+  width: 100%;
   font-size: large; }
+  .App-content .content {
+    background-color: white;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto; }
 
 .App-title {
   font-size: 1.5em; }
@@ -60,39 +66,53 @@ button {
 
 .Home .content {
   width: 100%;
-  padding: 10px 0; }
-  .Home .content .tileGroup {
+  padding: 80px 0; }
+  .Home .content .cardGroup {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; }
 
-.Home .tile {
+.Home .card {
   border: 1px solid gray;
   width: 100%;
   padding: 2%;
-  margin: 1% 0; }
+  margin: 1% 0;
+  height: 375px;
+  color: white; }
+  .Home .card.red {
+    background-color: #b6000b; }
+  .Home .card.purple {
+    background-color: #621a4b; }
+  .Home .card.black {
+    background-color: #2d373e; }
+  .Home .card.grey {
+    background-color: #d7d2cb;
+    color: #575f65; }
+  .Home .card.white {
+    background-color: white;
+    color: #575f65; }
 
 @media (min-width: 800px) {
-  .Home .tile {
+  .Home .card {
     width: 49%; }
-    .Home .tile:nth-child(2n+1) {
+    .Home .card:nth-child(2n + 1) {
       margin-left: 0;
       margin-right: 1%; }
-    .Home .tile:nth-child(2n+0) {
+    .Home .card:nth-child(2n + 0) {
       margin-left: 1%;
       margin-right: 0; } }
 
 @media (min-width: 1024px) {
-  .Home .tile {
+  .Home .card {
     width: 32%; }
-    .Home .tile:nth-child(3n+1) {
+    .Home .card:nth-child(3n + 1) {
       margin-left: 0;
       margin-right: 1%; }
-    .Home .tile:nth-child(3n+2) {
+    .Home .card:nth-child(3n + 2) {
       margin-left: 1%;
       margin-right: 1%; }
-    .Home .tile:nth-child(3n+0) {
+    .Home .card:nth-child(3n + 0) {
       margin-left: 1%;
       margin-right: 0; } }
 

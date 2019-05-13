@@ -7,7 +7,7 @@ import {
 } from "./redux/pageConfig";
 import { pageMap } from "./pages";
 
-class Bootstrap extends Component {
+class Routes extends Component {
   componentDidMount() {
     const { loadPageConfig } = this.props;
     loadPageConfig("/api/pageconfig");
@@ -51,4 +51,4 @@ export default connect(
   {
     loadPageConfig: loadPageConfigAction
   }
-)(Bootstrap);
+)(Routes);

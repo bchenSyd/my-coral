@@ -1,4 +1,3 @@
-
 /**
 // https://github.com/philipwalton/solved-by-flexbox/blob/7de2c175a4c075eb81da31cf300b9d5d842d8213/assets/css/components/site.css#L1
  * 1. Avoid the IE 10-11 `min-height` bug.
@@ -29,20 +28,27 @@
 
 .App-content {
   flex: 1 0 auto; /* 2 */
-  padding: 20px 40px;
+  background-color: #f4f3f0;
+  width: 100%;
   font-size: large;
+  .content {
+    background-color: white;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
-.Home{
-  @import './pages/home.scss';
+.Home {
+  @import "./pages/home.scss";
 }
 
-.Search{
-  @import './pages/search.scss';
+.Search {
+  @import "./pages/search.scss";
 }
 
 @keyframes App-logo-spin {

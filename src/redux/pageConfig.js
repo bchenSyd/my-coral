@@ -49,11 +49,11 @@ export const pageSelector = createSelector(
   }
 );
 
-export const tileGroupsSelector = pageName =>
+export const cardGroupsSelector = pageName =>
   createSelector(
     entitySelector,
-    ({ pages, tileGroups }) => {
+    ({ pages, cardGroups }) => {
       const page = pages.find(p => p.name === pageName);
-      return page.tileGroups.map(tg => tileGroups.find(t => t.id === tg));
+      return page.cardGroups.map(cg => cardGroups.find(t => t.id === cg));
     }
   );
