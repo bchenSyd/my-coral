@@ -25,7 +25,8 @@
     "eject": "react-scripts eject",
     "start-heroku": "node server/index.js",
     "heroku-prebuild": "echo ************ this is run before npm install *******",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "lint":"eslint --ext .js,.jsx --fix src "
   },
   "devDependencies": {
     "babel-eslint": "^8.2.5",

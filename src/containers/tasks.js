@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { refreshPage } from "../redux/refresh";
+import { refreshPage as refreshPageAction } from "../redux/refresh";
 import fetch from "../common/fetch";
 
 class Tasks extends Component {
@@ -33,7 +33,9 @@ class Tasks extends Component {
     const { refreshRequired: wasRefreshRequired } = this.props;
     const { refreshRequired, refreshPage } = nextProps;
     if (refreshRequired && !wasRefreshRequired) {
-      this.loadTasks(() => { refreshPage(false) });
+      this.loadTasks(() => {
+        refreshPage(false);
+      });
     }
   }
 
@@ -41,15 +43,17 @@ class Tasks extends Component {
     const tasks = _tasks.map((t, index) => (
       <div key={`_apmt_${index}`}>{t}</div>
     ));
-    tasks.push(<div key='timestamp'>lastUpdated: {timeStamp}</div>);
+    tasks.push(<div key="timestamp">lastUpdated: {timeStamp}</div>);
     return tasks;
-  }
+  };
 
   render() {
     const { loading, tasks, timeStamp } = this.state;
-    return loading
-      ? <div>loading tasks...</div>
-      : this.renderAppointments(tasks, timeStamp)
+    return loading ? (
+      <div>loading tasks...</div>
+    ) : (
+      this.renderAppointments(tasks, timeStamp)
+    );
   }
 }
 
@@ -58,6 +62,6 @@ export default connect(
     refreshRequired: state.refresh.required
   }),
   {
-    refreshPage
+    refreshPage: refreshPageAction
   }
 )(Tasks);

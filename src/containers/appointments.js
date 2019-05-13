@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { refreshPage } from "../redux/refresh";
+import { refreshPage as refreshPageAction } from "../redux/refresh";
 import fetch from "../common/fetch";
 
 class Appointments extends Component {
@@ -33,23 +33,27 @@ class Appointments extends Component {
     const { refreshRequired: wasRefreshRequired } = this.props;
     const { refreshRequired, refreshPage } = nextProps;
     if (refreshRequired && !wasRefreshRequired) {
-      this.loadAppointments(() => { refreshPage(false) });
+      this.loadAppointments(() => {
+        refreshPage(false);
+      });
     }
   }
 
   renderAppointments = (_appointments, timeStamp) => {
-    const appointments = _appointments.map((p, index) => (
-      <div key={`_apmt_${index}`}>{p}</div>
+    const appointments = _appointments.map(p => (
+      <div key={`_apmt_${p}`}>{p}</div>
     ));
-    appointments.push(<div key='timestamp'>lastUpdated: {timeStamp}</div>);
+    appointments.push(<div key="timestamp">lastUpdated: {timeStamp}</div>);
     return appointments;
-  }
+  };
 
   render() {
     const { loading, appointments, timeStamp } = this.state;
-    return loading
-      ? <div>loading appointments...</div>
-      : this.renderAppointments(appointments, timeStamp)
+    return loading ? (
+      <div>loading appointments...</div>
+    ) : (
+      this.renderAppointments(appointments, timeStamp)
+    );
   }
 }
 
@@ -58,6 +62,6 @@ export default connect(
     refreshRequired: state.refresh.required
   }),
   {
-    refreshPage
+    refreshPage: refreshPageAction
   }
 )(Appointments);

@@ -1,12 +1,12 @@
-import fetch from "../common/fetch";
 import { createActions, handleActions } from "redux-actions";
 import { createSelector } from "reselect";
+import fetch from "../common/fetch";
 
 const {
-  loadpageconfigStart /*#name: this must match with #key*/: startLoading,
+  loadpageconfigStart /* #name: this must match with #key */: startLoading,
   loadpageconfigComplete: completeLoading
 } = createActions({
-  LOADPAGECONFIG_START /*#key: catch!! this must match with #name after 1. trim underscore 2. camalCase   */: undefined,
+  LOADPAGECONFIG_START /* #key: catch!! this must match with #name after 1. trim underscore 2. camalCase   */: undefined,
 
   LOADPAGECONFIG_COMPLETE: undefined // if null or undefined, use identity function by defualt;
 });
@@ -38,16 +38,22 @@ export const loadPageConfig = url => dispatch => {
 };
 
 const entitySelector = state => state.pageConfig.entities;
-export const pageSelector = createSelector(entitySelector, entities => {
-  const pages = entities.pages;
-  return {
-    homePage: pages[0],
-    allPages: pages
-  };
-});
+export const pageSelector = createSelector(
+  entitySelector,
+  entities => {
+    const { pages } = entities;
+    return {
+      homePage: pages[0],
+      allPages: pages
+    };
+  }
+);
 
 export const tileGroupsSelector = pageName =>
-  createSelector(entitySelector, ({ pages, tileGroups }) => {
-    const page = pages.find(p => p.name === pageName);
-    return page.tileGroups.map(tg => tileGroups.find(t => t.id === tg));
-  });
+  createSelector(
+    entitySelector,
+    ({ pages, tileGroups }) => {
+      const page = pages.find(p => p.name === pageName);
+      return page.tileGroups.map(tg => tileGroups.find(t => t.id === tg));
+    }
+  );

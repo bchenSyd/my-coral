@@ -1,9 +1,10 @@
-const path=require('path');
+const path = require("path");
 const express = require("express");
 const pageConfig = require("./data/page");
 const app = express();
 
-app.use((req, res, next) => {  // same as require('cors'); app.use( cors({ options:'*' })) ;
+app.use((req, res, next) => {
+  // same as require('cors'); app.use( cors({ options:'*' })) ;
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -15,7 +16,7 @@ app.use((req, res, next) => {  // same as require('cors'); app.use( cors({ optio
   next();
 });
 
-app.use(express.static(path.join(__dirname,"./build")));
+app.use(express.static(path.join(__dirname, "./build")));
 var router = express.Router();
 router.get("/pageConfig", function(req, res) {
   setTimeout(() => {

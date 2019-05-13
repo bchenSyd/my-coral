@@ -9,6 +9,13 @@ module.exports = {
   parser: "babel-eslint", // for  state = { toggle: false} // Unexpected token = (which is purely a babel syntax); @babel/plugin-proposal-class-properties
   plugins: ["react"],
   rules: {
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/prop-types":"off",
+    "import/no-extraneous-dependencies":"off",
+    "lines-between-class-members":"off",
+    "react/sort-comp":"off",
+    "react/jsx-one-expression-per-line":"off",
+    "react/no-array-index-key":"off",
+    "react/button-has-type":"off"
   }
 };
