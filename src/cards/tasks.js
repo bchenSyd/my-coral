@@ -8,6 +8,9 @@ class Tasks extends Component {
     loading: false,
     tasks: {}
   };
+
+  static title = "Tasks";
+  
   loadTasks(cb) {
     this.setState({
       loading: true

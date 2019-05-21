@@ -29,12 +29,9 @@
             "id": "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e",
             "cards": [
                 "today",
-                "todo",
-                "todo",
-                "todo",
-                "todo",
-                "todo",
-                "today"
+                "borrowingPower",
+                "accountsHolding",
+                "upcoming"
             ]
         },
         {

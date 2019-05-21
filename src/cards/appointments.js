@@ -25,6 +25,8 @@ class Appointments extends Component {
     });
   }
 
+  static title = "Appointments";
+
   componentWillMount() {
     this.loadAppointments();
   }
@@ -39,11 +41,10 @@ class Appointments extends Component {
     }
   }
 
-  renderAppointments = (_appointments, timeStamp) => {
+  renderAppointments = _appointments => {
     const appointments = _appointments.map(p => (
-      <div key={`_apmt_${p}`}>{p}</div>
+      <li key={`_apmt_${p}`}>{p}</li>
     ));
-    appointments.push(<div key="timestamp">lastUpdated: {timeStamp}</div>);
     return appointments;
   };
 
@@ -52,7 +53,10 @@ class Appointments extends Component {
     return loading ? (
       <div>loading appointments...</div>
     ) : (
-      this.renderAppointments(appointments, timeStamp)
+      <div>
+        <ul>{this.renderAppointments(appointments, timeStamp)}</ul>
+        <div>lastUpdated: {timeStamp}</div>
+      </div>
     );
   }
 }
