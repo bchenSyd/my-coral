@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { refreshPage as refreshPageAction } from "../redux/refresh";
 import fetch from "../common/fetch";
+import { Card } from "../components/cards";
 
 class Appointments extends Component {
   state = {
@@ -24,8 +25,6 @@ class Appointments extends Component {
       }
     });
   }
-
-  static title = "Appointments";
 
   componentWillMount() {
     this.loadAppointments();
@@ -50,13 +49,17 @@ class Appointments extends Component {
 
   render() {
     const { loading, appointments, timeStamp } = this.state;
-    return loading ? (
-      <div>loading appointments...</div>
-    ) : (
-      <div>
-        <ul>{this.renderAppointments(appointments, timeStamp)}</ul>
-        <div>lastUpdated: {timeStamp}</div>
-      </div>
+    return (
+      <Card title="Appointments" {...this.props}>
+        {loading ? (
+          <div>loading appointments...</div>
+        ) : (
+          <div>
+            <ul>{this.renderAppointments(appointments, timeStamp)}</ul>
+            <div>lastUpdated: {timeStamp}</div>
+          </div>
+        )}
+      </Card>
     );
   }
 }

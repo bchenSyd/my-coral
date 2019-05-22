@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { refreshPage as refreshPageAction } from "../redux/refresh";
 import fetch from "../common/fetch";
+import { Card } from "../components/cards";
 
 class Tasks extends Component {
   state = {
@@ -9,8 +10,6 @@ class Tasks extends Component {
     tasks: {}
   };
 
-  static title = "Tasks";
-  
   loadTasks(cb) {
     this.setState({
       loading: true
@@ -52,10 +51,14 @@ class Tasks extends Component {
 
   render() {
     const { loading, tasks, timeStamp } = this.state;
-    return loading ? (
-      <div>loading tasks...</div>
-    ) : (
-      this.renderAppointments(tasks, timeStamp)
+    return (
+      <Card title="Tasks" {...this.props}>
+        {loading ? (
+          <div>loading tasks...</div>
+        ) : (
+          this.renderAppointments(tasks, timeStamp)
+        )}
+      </Card>
     );
   }
 }

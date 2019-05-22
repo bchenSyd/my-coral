@@ -1,13 +1,13 @@
 import React, { Component } from "react";
+import { Card } from "../components/cards";
 
 class AccountsHoldings extends Component {
-  static title = "Accounts & Holdings";
   render() {
     return (
-      <div>
+      <Card title="Accounts & Holdings" {...this.props}>
         content goes here content goes here content goes here content goes here
         content goes here content goes here content goes here
-      </div>
+      </Card>
     );
   }
 }

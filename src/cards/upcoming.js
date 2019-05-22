@@ -1,14 +1,13 @@
 import React, { Component } from "react";
+import {Card} from '../components/cards';
 
 class Upcoming extends Component {
-  static title = "Upcoming";
-
   render() {
     return (
-      <div>
+      <Card title = "Upcoming" {...this.props}>
         content goes here content goes here content goes here content goes here
         content goes here content goes here content goes here
-      </div>
+      </Card>
     );
   }
 }
