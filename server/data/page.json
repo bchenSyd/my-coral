@@ -26,7 +26,8 @@
     ],
     "cardGroups": [
         {
-            "id": "62a6d8e930d6f7c0bffa2dd7cb783963e7fef58e",
+            "id": "cardGroup.one",
+            "title":"group one", 
             "cards": [
                 "today",
                 "borrowingPower",
@@ -36,7 +37,8 @@
             ]
         },
         {
-            "id": "389cc6b7ae5a659383eab5dfc253764eccf84732",
+            "id": "cardGroup.two",
+            "title":"group two",
             "cards": [
                 "today",
                 "todo"

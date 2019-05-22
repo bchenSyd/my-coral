@@ -1,14 +1,14 @@
 import React, { createElement } from "react";
 import { cardMap } from "../cards";
 
-export const CardGroup = ({ cardGroup, index }) => (
+export const CardGroup = ({ cardGroup: { title, cards: groupCards } }) => (
   <div>
-    <h3> card group {index + 1}</h3>
+    <h3> {title}</h3>
     <div className="cardGroup">
-      {cardGroup.cards.map((cardName, i) => {
+      {groupCards.map((cardName, index) => {
         const CardComponent = cardMap.get(cardName);
         // const card = createElement(cardMap.get(cardName));
-        return <CardComponent cardOrder = {i} />;
+        return <CardComponent cardOrder={index} />;
       })}
     </div>
   </div>
