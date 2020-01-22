@@ -1,4 +1,5 @@
-import "./ie-polyfills"; // must be at the top, before import 'react'
+import '@babel/polyfill';
+
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";

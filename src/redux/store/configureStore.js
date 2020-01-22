@@ -9,7 +9,7 @@ const composeEnhancers =
   typeof window === "object" &&
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ //eslint-disable-line
   ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ //eslint-disable-line
-        name: "jo-math-class"
+        name: "my-coral"
       })
     : compose;
 
