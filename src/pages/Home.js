@@ -6,7 +6,6 @@ import { CardGroup } from "../components/cards";
 import pages from "./constants";
 
 const Home = ({ refreshPage, history, cardGroups }) => {
-  debugger;
   const onSearch = () => {
     history.push("/search");
   };

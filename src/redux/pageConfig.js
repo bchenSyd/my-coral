@@ -53,7 +53,6 @@ export const cardGroupsSelector = pageName =>
   createSelector(
     entitySelector,
     ({ pages, cardGroups }) => {
-      debugger;
       const page = pages.find(p => p.name === pageName);
       return page.cardGroups.map(cg => cardGroups.find(t => t.id === cg));
     }
