@@ -7,7 +7,6 @@ const {
   loadpageconfigComplete: completeLoading
 } = createActions({
   LOADPAGECONFIG_START /* #key: catch!! this must match with #name after 1. trim underscore 2. camalCase   */: undefined,
-
   LOADPAGECONFIG_COMPLETE: undefined // if null or undefined, use identity function by defualt;
 });
 
